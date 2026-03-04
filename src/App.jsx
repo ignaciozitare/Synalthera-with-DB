@@ -1611,7 +1611,7 @@ function Login({allUsers, onLogin, t, theme}){
       <div style={{background:t.surface,border:`1px solid ${t.border}`,borderRadius:20,padding:"40px 36px",width:"100%",maxWidth:400,boxShadow:`0 32px 80px ${t.shadow}`}}>
         <div style={{textAlign:"center",marginBottom:28}}>
           <div style={{display:"flex",justifyContent:"center",marginBottom:14}}>
-            <img src={theme==="dark"?LOGO_DARK:LOGO_LIGHT} alt="Synthera" style={{height:50,width:"auto",objectFit:"contain"}}/>
+            <img src={theme==="dark"?LOGO_DARK:LOGO_LIGHT} alt="Synthera" style={{height:40,width:"auto",objectFit:"contain"}}/>
           </div>
           <p style={{color:t.muted,fontSize:13}}>Environment Reservation Platform</p>
         </div>
@@ -1766,7 +1766,7 @@ export default function App() {
 
       <header style={{position:"relative",zIndex:100,background:t.headerBg,backdropFilter:"blur(12px)",borderBottom:`1px solid ${t.border}`,display:"flex",alignItems:"center",padding:"0 14px",height:50,flexShrink:0,gap:4}}>
         <div style={{display:"flex",alignItems:"center",gap:8,marginRight:18}}>
-          <img src={theme==="dark"?LOGO_DARK:LOGO_LIGHT} alt="Synthera" style={{height:50,width:"auto",objectFit:"contain"}}/>
+          <img src={theme==="dark"?LOGO_DARK:LOGO_LIGHT} alt="Synthera" style={{height:40,width:"auto",objectFit:"contain"}}/>
         </div>
         <nav style={{display:"flex",gap:2,flex:1}}>
           {NAV.map(n=>(
