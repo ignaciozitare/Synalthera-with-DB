@@ -1,14 +1,34 @@
-import { supabase } from './supabase.js'
+import { createClient } from '@supabase/supabase-js'
+
+// ─── v3 — si ves esto en consola, el archivo nuevo está desplegado ────────────
+console.log('%c[db.js v3] cargado correctamente', 'color:#4ade80;font-weight:bold;font-size:13px')
+
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY
+
+if (!SUPABASE_URL || !SUPABASE_KEY) {
+  console.error('[db.js v3] ❌ FALTAN variables de entorno VITE_SUPABASE_URL y/o VITE_SUPABASE_KEY')
+} else {
+  console.log('[db.js v3] ✅ Variables de entorno OK:', SUPABASE_URL)
+}
+
+export const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 // ─── Error logging wrapper ────────────────────────────────────────────────────
 const safe = async (promise, label) => {
-  const res = await promise
-  if (res.error) {
-    console.error(`[Supabase ❌ ${label}]`, res.error.message, res.error)
-  } else {
-    console.log(`[Supabase ✅ ${label}] OK`)
+  try {
+    const res = await promise
+    if (res.error) {
+      console.error(`[Supabase ❌ ${label}]`, res.error.message, res.error)
+      alert(`Error guardando en Supabase (${label}):\n${res.error.message}\n\nRevisa la consola (F12) para más detalles.`)
+    } else {
+      console.log(`[Supabase ✅ ${label}] OK`)
+    }
+    return res
+  } catch (err) {
+    console.error(`[Supabase 💥 ${label}] excepción:`, err)
+    alert(`Excepción en ${label}: ${err.message}`)
   }
-  return res
 }
 
 // ─── Mappers snake_case (DB) ↔ camelCase (App) ───────────────────────────────
