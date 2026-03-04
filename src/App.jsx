@@ -1611,7 +1611,7 @@ function Login({allUsers, onLogin, t, theme}){
       <div style={{background:t.surface,border:`1px solid ${t.border}`,borderRadius:20,padding:"40px 36px",width:"100%",maxWidth:400,boxShadow:`0 32px 80px ${t.shadow}`}}>
         <div style={{textAlign:"center",marginBottom:28}}>
           <div style={{display:"flex",justifyContent:"center",marginBottom:14}}>
-            <img src={theme==="dark"?LOGO_DARK:LOGO_LIGHT} alt="Synthera" style={{height:120,width:"auto",objectFit:"contain"}}/>
+           <img src={theme==="dark"?LOGO_DARK:LOGO_LIGHT} alt="Synthera" style={{width:"100%",maxWidth:280,height:"auto",objectFit:"contain"}}/>
           </div>
           <p style={{color:t.muted,fontSize:13}}>Environment Reservation Platform</p>
         </div>
