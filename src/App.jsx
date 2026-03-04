@@ -1610,9 +1610,7 @@ function Login({allUsers, onLogin, t, theme}){
       <style>{GS}</style>
       <div style={{background:t.surface,border:`1px solid ${t.border}`,borderRadius:20,padding:"40px 36px",width:"100%",maxWidth:400,boxShadow:`0 32px 80px ${t.shadow}`}}>
         <div style={{textAlign:"center",marginBottom:28}}>
-        <div style={{display:"flex",justifyContent:"center",marginBottom:14}}>
-  <img src={theme==="dark"?LOGO_DARK:LOGO_LIGHT} alt="Synthera" style={{maxHeight:80,maxWidth:"100%",objectFit:"contain"}}/>
-</div>
+<img src={theme==="dark"?LOGO_DARK:LOGO_LIGHT} alt="Synthera" style={{width:"100%",maxHeight:80,objectFit:"contain",display:"block",marginBottom:14}}/>
           <p style={{color:t.muted,fontSize:13}}>Environment Reservation Platform</p>
         </div>
         <div style={{display:"flex",flexDirection:"column",gap:8,marginBottom:20}}>
