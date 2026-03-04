@@ -1610,8 +1610,17 @@ function Login({allUsers, onLogin, t, theme}){
       <style>{GS}</style>
       <div style={{background:t.surface,border:`1px solid ${t.border}`,borderRadius:20,padding:"40px 36px",width:"100%",maxWidth:400,boxShadow:`0 32px 80px ${t.shadow}`}}>
         <div style={{textAlign:"center",marginBottom:28}}>
-<img src={theme==="dark"?LOGO_DARK:LOGO_LIGHT} alt="Synthera" style={{height:60,width:"auto",maxWidth:"100%",display:"block",margin:"0 auto 14px"}}/>
-          <p style={{color:t.muted,fontSize:13}}>Environment Reservation Platform</p>
+<img
+  src={theme === "dark" ? LOGO_DARK : LOGO_LIGHT}
+  alt="SynalterA"
+  style={{
+    height: 64,          // ajusta 56–72 según te guste
+    width: "auto",
+    maxWidth: "100%",
+    display: "block",
+    margin: "0 auto 14px",
+  }}
+/>
         </div>
         <div style={{display:"flex",flexDirection:"column",gap:8,marginBottom:20}}>
           <button onClick={()=>setSso("google")} style={{...B(t,"outline",{width:"100%",padding:"10px",fontSize:14,display:"flex",alignItems:"center",justifyContent:"center",gap:10})}}>
